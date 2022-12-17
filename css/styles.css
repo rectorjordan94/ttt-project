@@ -1,0 +1,18 @@
+#grid {
+    border: 1px solid black;
+    width: 605px;
+    height: 605px;
+    margin-bottom: 20px;
+}
+
+.box {
+    border: 1px solid black;
+    width: 200px;
+    height: 200px;
+    background-color: azure;
+}
+
+.row {
+    display: flex;
+}
+
