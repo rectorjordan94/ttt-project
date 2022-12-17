@@ -1,8 +1,10 @@
 #grid {
-    border: 1px solid black;
+    border: 5px solid black;
     width: 605px;
     height: 605px;
     margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .box {
@@ -12,7 +14,18 @@
     background-color: azure;
 }
 
-.row {
-    display: flex;
+#middleLeft {
+    background-color: red;
 }
 
+#bottomRight { 
+    background-color: orange;
+}
+
+#topMiddle {
+    background: yellow;
+}
+
+.hasBeenClicked {
+    pointer-events: none;
+}

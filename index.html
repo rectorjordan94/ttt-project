@@ -9,21 +9,15 @@
 </head>
 <body>
     <div id="grid">
-        <div class="row" id="topRow">
-            <div class="box" id="topLeft"></div>
-            <div class="box" id="topMiddle"></div>
-            <div class="box" id="topRight"></div>
-        </div>
-        <div class="row" id="middleRow">
-            <div class="box" id="middleLeft"></div>
-            <div class="box" id="middleMiddle"></div>
-            <div class="box" id="middleRight"></div>
-        </div>
-        <div class="row" id="bottomRow">
-            <div class="box" id="bottomLeft"></div>
-            <div class="box" id="bottomMiddle"></div>
-            <div class="box" id="bottomRight"></div>
-        </div>
+        <div class="box leftColumn topRow rlDiagonal" id="topLeft"></div>
+        <div class="box middleColumn topRow" id="topMiddle"></div>
+        <div class="box rightColumn topRow lrDiagonal" id="topRight"></div>
+        <div class="box leftColumn middleRow" id="middleLeft"></div>
+        <div class="box middleColumn middleRow rlDiagonal lrDiagonal" id="middleMiddle"></div>
+        <div class="box rightColumn middleRow" id="middleRight"></div>
+        <div class="box leftColumn bottomRow" id="bottomLeft"></div>
+        <div class="box middleColumn bottomRow" id="bottomMiddle"></div>
+        <div class="box rightColumn bottomRow rlDiagonal lrDiagonal" id="bottomRight"></div>
     </div>
     <button id="reset">RESET</button>
 
