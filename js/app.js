@@ -1,5 +1,6 @@
 // variable keeps track of moves, true = X, false = O
-let xMove = true
+let moveCounter = 0
+let gameEnd = false
 // const grid = document.getElementById('grid')
 const reset = document.getElementById('reset')
 const topRow = document.querySelectorAll('.topRow')
@@ -25,17 +26,21 @@ const boxes = document.querySelectorAll('.box')
 
 const makeMove = (event) => {
     const selected = event.target
-    if (xMove) {
+    console.log(moveCounter)
+    moveCounter++
+    console.log('//')
+    console.log(moveCounter)
+    if (moveCounter % 2 !== 0) {
         selected.style.backgroundColor = 'red'
         selected.classList.add('hasBeenClicked', 'red')
-        xMove = false
-        checkWinCondition()
-    } else if (!xMove) {
+    } else if (moveCounter % 2 === 0) {
         selected.style.backgroundColor = 'blue'
         selected.classList.add('hasBeenClicked', 'blue')
-        xMove = true
-        checkWinCondition()
-    } 
+    } else if (moveCounter === 9) {
+        console.log('its a tie')
+    }
+    checkWinCondition()
+
 }
 
 const checkWinCondition = () => {
@@ -44,61 +49,56 @@ const checkWinCondition = () => {
         gameOver()
     } else if (middleRow[0].classList.contains('red') && middleRow[1].classList.contains('red') && middleRow[2].classList.contains('red')) {
         console.log('you win')
-        gameOver()
+        // gameOver()
     } else if (bottomRow[0].classList.contains('red') && bottomRow[1].classList.contains('red') && bottomRow[2].classList.contains('red')) {
         console.log('you win')
-        gameOver()
+        // gameOver()
     } else if (leftColumn[0].classList.contains('red') && leftColumn[1].classList.contains('red') && leftColumn[2].classList.contains('red')) {
         console.log('you win')
-        gameOver()
+        // gameOver()
     } else if (middleColumn[0].classList.contains('red') && middleColumn[1].classList.contains('red') && middleColumn[2].classList.contains('red')) {
         console.log('you win')
-        gameOver()
+        // gameOver()
     } else if (rightColumn[0].classList.contains('red') && rightColumn[1].classList.contains('red') && rightColumn[2].classList.contains('red')) {
         console.log('you win')
-        gameOver()
+        // gameOver()
     } else if (lrDiagonal[0].classList.contains('red') && lrDiagonal[1].classList.contains('red') && lrDiagonal[2].classList.contains('red')) {
         console.log('you win')
-        gameOver()
+        // gameOver()
     } else if (rlDiagonal[0].classList.contains('red') && rlDiagonal[1].classList.contains('red') && rlDiagonal[2].classList.contains('red')) {
         console.log('you win')
-        gameOver()
+        // gameOver()
     } else if (topRow[0].classList.contains('blue') && topRow[1].classList.contains('blue') && topRow[2].classList.contains('blue')) {
         console.log('you lose')
-        gameOver()
+        // gameOver()
     } else if (middleRow[0].classList.contains('blue') && middleRow[1].classList.contains('blue') && middleRow[2].classList.contains('blue')) {
         console.log('you lose')
-        gameOver()
+        // gameOver()
     } else if (bottomRow[0].classList.contains('blue') && bottomRow[1].classList.contains('blue') && bottomRow[2].classList.contains('blue')) {
         console.log('you lose')
-        gameOver()
+        // gameOver()
     } else if (leftColumn[0].classList.contains('blue') && leftColumn[1].classList.contains('blue') && leftColumn[2].classList.contains('blue')) {
         console.log('you lose')
-        gameOver()
+        // gameOver()
     } else if (middleColumn[0].classList.contains('blue') && middleColumn[1].classList.contains('blue') && middleColumn[2].classList.contains('blue')) {
         console.log('you lose')
-        gameOver()
+        // gameOver()
     } else if (rightColumn[0].classList.contains('blue') && rightColumn[1].classList.contains('blue') && rightColumn[2].classList.contains('blue')) {
         console.log('you lose')
-        gameOver()
+        // gameOver()
     } else if (lrDiagonal[0].classList.contains('blue') && lrDiagonal[1].classList.contains('blue') && lrDiagonal[2].classList.contains('blue')) {
         console.log('you lose')
-        gameOver()
+        // gameOver()
     } else if (rlDiagonal[0].classList.contains('blue') && rlDiagonal[1].classList.contains('blue') && rlDiagonal[2].classList.contains('blue')) {
         console.log('you lose')
-        gameOver()
+        // gameOver()
     }
 }
 
 const gameOver = () => {
-    // you should not be able to click remaining empty cells after the game is over
-    // iterate over grid and disable pointer events for all cells
     for (let i = 0; i < 9; i++){
         boxes[i].classList.add('hasBeenClicked')
     }
-    // const gameOver = document.createElement('div')
-    // gameOver.innerText = 'Game Over'
-    // document.body.appendChild(gameOver)
 }
 
 const resetGrid = () => {
@@ -109,11 +109,10 @@ const resetGrid = () => {
     for (let i = 0; i < 9; i++){
         boxes[i].classList.remove('hasBeenClicked', 'red', 'blue')
         boxes[i].style.backgroundColor = randomColor
-        xMove = true
+        moveCounter = 0
         console.log(boxes[i].classList.value)
     }
 }
-
 
 for (let i = 0; i < 9; i++){
     boxes[i].addEventListener('click', makeMove)
