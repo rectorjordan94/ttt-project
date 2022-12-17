@@ -11,19 +11,7 @@
     border: 1px solid black;
     width: 200px;
     height: 200px;
-    background-color: azure;
-}
-
-#middleLeft {
-    background-color: red;
-}
-
-#bottomRight { 
-    background-color: orange;
-}
-
-#topMiddle {
-    background: yellow;
+    background-color: white;
 }
 
 .hasBeenClicked {
