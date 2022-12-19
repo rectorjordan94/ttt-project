@@ -2,16 +2,7 @@
 let moveCounter = 0
 let gameEnd = false
 let winner = ''
-// const grid = document.getElementById('grid')
 const reset = document.getElementById('reset')
-const topRow = document.querySelectorAll('.topRow')
-const middleRow = document.querySelectorAll('.middleRow')
-const bottomRow = document.querySelectorAll('.bottomRow')
-const leftColumn = document.querySelectorAll('.leftColumn')
-const middleColumn = document.querySelectorAll('.middleColumn')
-const rightColumn = document.querySelectorAll('.rightColumn')
-const lrDiagonal = document.querySelectorAll('.lrDiagonal')
-const rlDiagonal = document.querySelectorAll('.rlDiagonal')
 const title = document.getElementById('title')
 const subtitle = document.getElementById('subtitle')
 const playerOneMoves = []
@@ -44,14 +35,14 @@ const randomizeColors = () => {
 }
 
 let colors = randomizeColors()
-title.style.textShadow = `2px 2px 15px ${colors[0]}`;
-subtitle.style.textShadow = `2px 2px 15px ${colors[1]}`;
+title.style.textShadow = `2px 2px 10px ${colors[0]}`;
+subtitle.style.textShadow = `2px 2px 10px ${colors[1]}`;
 const boxes = document.querySelectorAll('.box')
 
 const resetGrid = () => {
     colors = randomizeColors()
-    title.style.textShadow = `2px 2px 15px ${colors[0]}`;
-    subtitle.style.textShadow = `2px 2px 15px ${colors[1]}`;
+    title.style.textShadow = `2px 2px 10px ${colors[0]}`;
+    subtitle.style.textShadow = `2px 2px 10px ${colors[1]}`;
     for (let i = 0; i < 9; i++){
         boxes[i].classList.remove('hasBeenClicked')
         boxes[i].style.backgroundColor = 'rgb(52, 52, 52)'
@@ -98,59 +89,6 @@ const checkWin = () => {
         }
     }
 }
-
-
-// const checkWinCondition = () => {
-//     if (topRow[0].classList.contains('red') && topRow[1].classList.contains('red') && topRow[2].classList.contains('red')) {
-//         winner = 'red'
-//         gameOver()
-//     } else if (middleRow[0].classList.contains('red') && middleRow[1].classList.contains('red') && middleRow[2].classList.contains('red')) {
-//         winner = 'red'
-//         gameOver()
-//     } else if (bottomRow[0].classList.contains('red') && bottomRow[1].classList.contains('red') && bottomRow[2].classList.contains('red')) {
-//         winner = 'red'
-//         gameOver()
-//     } else if (leftColumn[0].classList.contains('red') && leftColumn[1].classList.contains('red') && leftColumn[2].classList.contains('red')) {
-//         winner = 'red'
-//         gameOver()
-//     } else if (middleColumn[0].classList.contains('red') && middleColumn[1].classList.contains('red') && middleColumn[2].classList.contains('red')) {
-//         winner = 'red'
-//         gameOver()
-//     } else if (rightColumn[0].classList.contains('red') && rightColumn[1].classList.contains('red') && rightColumn[2].classList.contains('red')) {
-//         winner = 'red'
-//         gameOver()
-//     } else if (lrDiagonal[0].classList.contains('red') && lrDiagonal[1].classList.contains('red') && lrDiagonal[2].classList.contains('red')) {
-//         winner = 'red'
-//         gameOver()
-//     } else if (rlDiagonal[0].classList.contains('red') && rlDiagonal[1].classList.contains('red') && rlDiagonal[2].classList.contains('red')) {
-//         winner = 'red'
-//         gameOver()
-//     } else if (topRow[0].classList.contains('blue') && topRow[1].classList.contains('blue') && topRow[2].classList.contains('blue')) {
-//         winner = 'blue'
-//         gameOver()
-//     } else if (middleRow[0].classList.contains('blue') && middleRow[1].classList.contains('blue') && middleRow[2].classList.contains('blue')) {
-//         winner = 'blue'
-//         gameOver()
-//     } else if (bottomRow[0].classList.contains('blue') && bottomRow[1].classList.contains('blue') && bottomRow[2].classList.contains('blue')) {
-//         winner = 'blue'
-//         gameOver()
-//     } else if (leftColumn[0].classList.contains('blue') && leftColumn[1].classList.contains('blue') && leftColumn[2].classList.contains('blue')) {
-//         winner = 'blue'
-//         gameOver()
-//     } else if (middleColumn[0].classList.contains('blue') && middleColumn[1].classList.contains('blue') && middleColumn[2].classList.contains('blue')) {
-//         winner = 'blue'
-//         gameOver()
-//     } else if (rightColumn[0].classList.contains('blue') && rightColumn[1].classList.contains('blue') && rightColumn[2].classList.contains('blue')) {
-//         winner = 'blue'
-//         gameOver()
-//     } else if (lrDiagonal[0].classList.contains('blue') && lrDiagonal[1].classList.contains('blue') && lrDiagonal[2].classList.contains('blue')) {
-//         winner = 'blue'
-//         gameOver()
-//     } else if (rlDiagonal[0].classList.contains('blue') && rlDiagonal[1].classList.contains('blue') && rlDiagonal[2].classList.contains('blue')) {
-//         winner = 'blue'
-//         gameOver()
-//     }
-// }
 
 const gameOver = () => {
     for (let i = 0; i < 9; i++){
