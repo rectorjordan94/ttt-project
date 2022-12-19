@@ -111,7 +111,6 @@ const checkWin = () => {
                 } else {
                     boxes[i].style.opacity = '0'
                 }
-                
             }
             gameOver()
         }
