@@ -6,6 +6,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 
@@ -86,6 +87,21 @@ body {
     transition: all .25s;
   }
 
-  /* .box:hover {
-    opacity: .70;
-  } */
+@media (max-width: 500px) {
+    #grid {
+        width: 305px;
+        height: 305px;
+        margin: 20px 0 0 0;
+    }
+    .box {
+        width: 95px;
+        height: 95px;
+        margin: 0 0;
+    }
+    #reset {
+        margin-top: 40px;
+    }
+    #title {
+        font-size: 45px;
+    }
+}
