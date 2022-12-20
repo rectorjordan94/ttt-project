@@ -87,7 +87,7 @@ body {
     transition: all .25s;
   }
 
-@media (max-width: 500px) {
+@media (max-width: 400px) {
     #grid {
         width: 305px;
         height: 305px;
@@ -102,6 +102,6 @@ body {
         margin-top: 40px;
     }
     #title {
-        font-size: 45px;
+        font-size: 40px;
     }
 }
